@@ -1,0 +1,13 @@
+windows10 X64
+1.下载msys2,安装配置
+https://mirror.tuna.tsinghua.edu.cn/help/msys2/
+2.msys2执行
+pacman -S vim git unzip (curl没有的话,不建议直接装,curl bug:装了一次再装下载不了)
+出错就删掉msys64\var\lib\pacman目录下的db.lck,继续执行命令
+3.下载universal-ctags,把ctags.exe和readtags.exe放到msys64\mingw64\bin目录下
+4.下载vim插件管理
+https://github.com/junegunn/vim-plug
+出错就重复执行命令
+5.复制.vimrc到msys64\home\windows10目录下
+6.vim下执行
+:PlugInstall
