@@ -68,6 +68,9 @@ set wildmode=list:longest,full
 " 使回格键（backspace）正常处理indent, eol, start等
 set backspace=indent,eol,start
 
+" 设置vim文件浏览不生成文件历史文件
+let g:netrw_dirhistmax = 0
+
 " vim基本快捷键
 " 按"Ctrl+s" 保存
 " 按"/q" 退出
