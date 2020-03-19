@@ -1,4 +1,11 @@
-" 突出显示当前行
+"================================================================
+"文件名称：.vimrc
+"创 建 者：九新
+"联系方式：jiuxin303@qq.com
+"创建日期：2020年03月19日
+"描    述：我的vim配置文件
+"================================================================
+
 set cursorline
 
 " 打开行号
@@ -70,6 +77,16 @@ set backspace=indent,eol,start
 " 按"/he" 水平显示文件浏览
 " 按"/ve" 垂直显示文件浏览
 " 按"/t" 显示终端,结束按"ESC"键
+" 按"/u" 撤销操作
+" 按"/r" 恢复操作
+" 按"dd" 删除一行
+" 按"yy" 复制当前行
+" 按"v"+方向键选中文字+"y" 复制选的内容
+" 按"v"+方向键选中文字+"d" 删除选定内容
+" 按"p" 粘贴
+" 按数字+"/g"跳到某行
+" 按"gg" 跳到行首
+" 按"/g" 跳到行尾
 nnoremap <silent> <Leader>s :w<CR>
 nnoremap <silent> <Leader>q :q<CR>
 nnoremap <Leader>hf :sp
@@ -82,6 +99,9 @@ nnoremap <silent> <Leader>wd <C-w>l
 nnoremap <silent> <Leader>he :Sex<CR>
 nnoremap <silent> <Leader>ve :Vex<CR>
 nnoremap <silent> <Leader>t :terminal<CR>
+nnoremap <silent> <Leader>u u
+nnoremap <silent> <Leader>r <C-r>
+nnoremap <silent> <Leader>g G
 
 " 头文件注释,适用于c/c++,go语言
 func SetHeadComment()
@@ -94,12 +114,11 @@ func SetHeadComment()
     call append(line(".")+5, "#")
     call append(line(".")+6, "================================================================*/")
     call append(line(".")+7, "")
-    call append(line(".")+8, "")
 endfunc
 
 " 设置头文件注释
 " 输入"/h" 自动头文件补全
-nnoremap <silent> <Leader>h :call SetHeadComment()<CR> G
+nnoremap <silent> <Leader>h :call SetHeadComment()<CR> 9G
 
 call plug#begin('~/.vim/plugged')
 " 主题
@@ -183,3 +202,4 @@ nnoremap <silent> <Leader>tt :TagbarToggle<CR>
 " 异步执行
 " 按"/ar"+命令 可以执行命令
 nnoremap <Leader>ar :AsyncRun 
+
