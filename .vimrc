@@ -72,6 +72,8 @@ set backspace=indent,eol,start
 let g:netrw_dirhistmax = 0
 
 " vim基本快捷键
+" 按"i" 输入
+" 按"Tab"+"q" 退出输入
 " 按"Ctrl+s" 保存
 " 按"/q" 退出
 " 按"/hf"+文件名+回车 水平创建或打开一个文件
@@ -94,6 +96,7 @@ let g:netrw_dirhistmax = 0
 " 按"/v" 粘贴系统剪切板
 nnoremap <silent> <Leader>s :w<CR>
 nnoremap <silent> <Leader>q :q<CR>
+imap <silent> <Tab>q <ESC>
 nnoremap <Leader>hf :sp
 nnoremap <leader>vf :vsp
 nnoremap <silent> <Leader>wm <C-w>=
