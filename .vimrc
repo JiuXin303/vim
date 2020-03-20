@@ -90,6 +90,8 @@ let g:netrw_dirhistmax = 0
 " 按数字+"/g"跳到某行
 " 按"gg" 跳到行首
 " 按"/g" 跳到行尾
+" 按"v"+方向键选中文字+"/c" 复制到系统剪切板
+" 按"/v" 粘贴系统剪切板
 nnoremap <silent> <Leader>s :w<CR>
 nnoremap <silent> <Leader>q :q<CR>
 nnoremap <Leader>hf :sp
@@ -105,6 +107,8 @@ nnoremap <silent> <Leader>t :terminal<CR>
 nnoremap <silent> <Leader>u u
 nnoremap <silent> <Leader>r <C-r>
 nnoremap <silent> <Leader>g G
+vmap <silent> <Leader>c "+y
+nnoremap <silent> <Leader>v "+p
 
 " 头文件注释,适用于c/c++,go语言
 func SetHeadComment()
