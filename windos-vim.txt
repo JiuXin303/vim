@@ -1,34 +1,32 @@
 windows10 X64
 1.下载msys2,安装配置
 http://mirrors.ustc.edu.cn/help/msys2.html
-3.msys2执行
-pacman -S vim git unzip zsh(curl没有的话,不建议直接装,curl bug:装了一次再装下载不了)
+2.msys2执行
+pacman -S vim git unzip zsh mingw-w64-x86_64-universal-ctags-git(curl没有的话,不建议直接装,curl bug:装了一次再装下载不了)
 出错就删掉msys64\var\lib\pacman目录下的db.lck,继续执行命令
-2.修改包管理器颜色
+3.修改包管理器颜色
 vi /etc/pacman.conf
 去掉Color、TotalDownload的注释
-4.安装universal-ctags
-pacman -S mingw-w64-x86_64-universal-ctags-git
-5.下载vim插件管理
+4.下载vim插件管理
 https://github.com/junegunn/vim-plug
 出错就重复执行命令
-6.复制.vimrc到msys64\home\windows10目录下
-7.vim下执行
+5.复制.vimrc到msys64\home\windows10目录下
+6.vim下执行
 :PlugInstall
-8.安装zsh+ohmyzsh
+7.安装zsh+ohmyzsh
 sh -c "$(curl -fsSL https://gitee.com/shmhlsy/oh-my-zsh-install.sh/raw/master/install.sh)"
 vim ~/.zshrc
 把.zshrc的ZSH_THEME修改为"ys"
 vim ~/.bashrc
 末尾添加
 exec zsh
-9.打开msys2,窗口标题右键Options
+8.打开msys2,窗口标题右键Options
 Looks的Theme改为windows10,Transparency改为High
 Window的Columns改为120,Rows改为36
-10.安装zsh-syntax-highlighting
+9.安装zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git .zsh-syntax-highlighting --depth 1
 echo "source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ".zshrc"
-11.安装开发环境
+10.安装开发环境
 pacman -S pacman -S mingw-w64-x86_64-go
 go环境设置
 go env (第一次安装使用会报错,重启下msys2)
