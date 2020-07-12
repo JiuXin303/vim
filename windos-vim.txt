@@ -1,20 +1,20 @@
 windows10 X64
 1.下载msys2,安装配置
 http://mirrors.ustc.edu.cn/help/msys2.html
-2.msys2执行
-pacman -S vim git unzip zsh(curl没有的话,不建议直接装,curl bug:装了一次再装下载不了)
-出错就删掉msys64\var\lib\pacman目录下的db.lck,继续执行命令
-3.安装universal-ctags
-pacman -S mingw-w64-x86_64-universal-ctags-git
-4.下载vim插件管理
-https://github.com/junegunn/vim-plug
-出错就重复执行命令
-5.复制.vimrc到msys64\home\windows10目录下
-6.vim下执行
-:PlugInstall
-7.修改包管理器颜色
+2.修改包管理器颜色
 vim /etc/pacman.conf
 去掉Color、TotalDownload的注释
+3.msys2执行
+pacman -S vim git unzip zsh(curl没有的话,不建议直接装,curl bug:装了一次再装下载不了)
+出错就删掉msys64\var\lib\pacman目录下的db.lck,继续执行命令
+4.安装universal-ctags
+pacman -S mingw-w64-x86_64-universal-ctags-git
+5.下载vim插件管理
+https://github.com/junegunn/vim-plug
+出错就重复执行命令
+6.复制.vimrc到msys64\home\windows10目录下
+7.vim下执行
+:PlugInstall
 8.安装zsh+ohmyzsh
 sh -c "$(curl -fsSL https://gitee.com/shmhlsy/oh-my-zsh-install.sh/raw/master/install.sh)"
 vim ~/.zshrc
