@@ -7,10 +7,9 @@ pacman -S vim git unzip zsh mingw-w64-x86_64-universal-ctags-git(curl没有的�
 3.修改包管理器颜色
 vim /etc/pacman.conf
 去掉Color、TotalDownload的注释
-4.下载vim插件管理,下载不了,直接下载zip包，解压把plug.vim到~/.vim/autoload下
+4.下载vim插件管理,下载不了,直接下载zip包，解压把plug.vim复制到~/.vim/autoload下
 https://github.com/junegunn/vim-plug
-5.vim ~/.vimrc
-复制.vimrc内容到~/windows10目录下
+5.下载zip包，解压把.vimrc复制到~/下
 6.vim下执行
 :PlugInstall
 7.安装zsh+ohmyzsh
@@ -21,7 +20,7 @@ vim ~/.bashrc
 末尾添加
 exec zsh
 8.打开msys2,窗口标题右键Options
-Looks的Theme改为windows10,Transparency改为High
+Looks的Theme改为windows10,Transparency改为Medium
 Window的Columns改为120,Rows改为36
 9.安装zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git .zsh-syntax-highlighting --depth 1
