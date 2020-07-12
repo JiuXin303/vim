@@ -4,7 +4,8 @@ https://mirror.tuna.tsinghua.edu.cn/help/msys2/
 2.msys2执行
 pacman -S vim git unzip (curl没有的话,不建议直接装,curl bug:装了一次再装下载不了)
 出错就删掉msys64\var\lib\pacman目录下的db.lck,继续执行命令
-3.下载universal-ctags,把ctags.exe和readtags.exe放到msys64\mingw64\bin目录下
+3.安装universal-ctags
+pacman -S mingw-w64-x86_64-universal-ctags-git
 4.下载vim插件管理
 https://github.com/junegunn/vim-plug
 出错就重复执行命令
