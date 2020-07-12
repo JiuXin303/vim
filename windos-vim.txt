@@ -31,6 +31,5 @@ go环境设置
 go env (第一次安装使用会报错,重启下msys2)
 echo "export GO111MODULE=on" >> ~/.profile
 echo "export GOPROXY=https://goproxy.cn" >> ~/.profile
-echo "export GOBIN=~/go/bin" >> ~/.profile (GOBIN=这里的路径自己改)
 echo "source ~/.profile" >> .zshrc (安装有zsh,这样每次启动就不用运行下面的命令了)
 source ~/.profile
