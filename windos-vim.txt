@@ -1,12 +1,12 @@
 windows10 X64
 1.下载msys2,安装配置
 http://mirrors.ustc.edu.cn/help/msys2.html
-2.修改包管理器颜色
-vi /etc/pacman.conf
-去掉Color、TotalDownload的注释
 3.msys2执行
 pacman -S vim git unzip zsh(curl没有的话,不建议直接装,curl bug:装了一次再装下载不了)
 出错就删掉msys64\var\lib\pacman目录下的db.lck,继续执行命令
+2.修改包管理器颜色
+vi /etc/pacman.conf
+去掉Color、TotalDownload的注释
 4.安装universal-ctags
 pacman -S mingw-w64-x86_64-universal-ctags-git
 5.下载vim插件管理
