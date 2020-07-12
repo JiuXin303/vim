@@ -5,12 +5,12 @@ http://mirrors.ustc.edu.cn/help/msys2.html
 pacman -S vim git unzip zsh mingw-w64-x86_64-universal-ctags-git(curl没有的话,不建议直接装,curl bug:装了一次再装下载不了)
 出错就删掉msys64\var\lib\pacman目录下的db.lck,继续执行命令
 3.修改包管理器颜色
-vi /etc/pacman.conf
+vim /etc/pacman.conf
 去掉Color、TotalDownload的注释
-4.下载vim插件管理
+4.下载vim插件管理,下载不了,直接复制plug.vim
 https://github.com/junegunn/vim-plug
-出错就重复执行命令
-5.复制.vimrc到msys64\home\windows10目录下
+5.vim ~/.vimrc
+复制.vimrc到msys64\home\windows10目录下
 6.vim下执行
 :PlugInstall
 7.安装zsh+ohmyzsh
