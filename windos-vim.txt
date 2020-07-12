@@ -2,7 +2,7 @@ windows10 X64
 1.下载msys2,安装配置
 http://mirrors.ustc.edu.cn/help/msys2.html
 2.msys2执行
-pacman -S vim git unzip (curl没有的话,不建议直接装,curl bug:装了一次再装下载不了)
+pacman -S vim git unzip zsh(curl没有的话,不建议直接装,curl bug:装了一次再装下载不了)
 出错就删掉msys64\var\lib\pacman目录下的db.lck,继续执行命令
 3.安装universal-ctags
 pacman -S mingw-w64-x86_64-universal-ctags-git
@@ -12,3 +12,28 @@ https://github.com/junegunn/vim-plug
 5.复制.vimrc到msys64\home\windows10目录下
 6.vim下执行
 :PlugInstall
+7.修改包管理器颜色
+vim /etc/pacman.conf
+去掉Color、TotalDownload的注释
+8.安装zsh+ohmyzsh
+sh -c "$(curl -fsSL https://gitee.com/shmhlsy/oh-my-zsh-install.sh/raw/master/install.sh)"
+vim ~/.zshrc
+把.zshrc的ZSH_THEME修改为"ys"
+vim ~/.bashrc
+末尾添加
+exec zsh
+9.打开msys2,窗口标题右键Options
+Looks的Theme改为windows10,Transparency改为High
+Window的Columns改为120,Rows改为36
+10.安装zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git .zsh-syntax-highlighting --depth 1
+echo "source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ".zshrc"
+11.安装开发环境
+pacman -S pacman -S mingw-w64-x86_64-go
+go环境设置
+go env (第一次安装使用会报错,重启下msys2)
+echo "export GO111MODULE=on" >> ~/.profile
+echo "export GOPROXY=https://goproxy.cn" >> ~/.profile
+echo "export GOBIN=~/go/bin" >> ~/.profile (GOBIN=这里的路径自己改)
+echo "source ~/.profile" >> .zshrc (安装有zsh,这样每次启动就不用运行下面的命令了)
+source ~/.profile
